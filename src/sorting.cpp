@@ -69,10 +69,21 @@ void merge_sort(ScoreEntry *data, int count, Comparator before,
 void selection_sort(ScoreEntry *data, int count, Comparator before,
                     long &comparisons) {
   // TODO (Task 2)
-  (void)data;
-  (void)count;
-  (void)before;
-  (void)comparisons;
+  for (int i = 0; i < count - 1; ++i) {
+    int mid_index = i;
+    for (int j = i + 1; j < count; ++j){
+    comparisons++;
+    if (before(data[j], data[mid_index])) {
+    mid_index = j;
+    }
+ }
+    if (mid_index != i){
+    ScoreEntry temp = data[i];
+    data[i] = data[mid_index];
+    data[mid_index] = temp;
+    }
+
+  }
 }
 
 void insertion_sort(ScoreEntry *data, int count, Comparator before,
@@ -87,19 +98,36 @@ void insertion_sort(ScoreEntry *data, int count, Comparator before,
 int linear_search_name(const ScoreEntry *data, int count,
                        const std::string &name, long &comparisons) {
   // TODO (Task 2)
-  (void)data;
-  (void)count;
-  (void)name;
-  (void)comparisons;
+  for (int i = 0; i < count; ++i) {
+  comparisons++;
+  if(data[i].name == name) {
+    return i;
+    }
+  }
   return -1;
 }
 
 int binary_search_name(const ScoreEntry *data, int count,
                        const std::string &name, long &comparisons) {
   // TODO (Task 3)
-  (void)data;
-  (void)count;
-  (void)name;
-  (void)comparisons;
+    int low = 0;
+    int high = count - 1;
+
+    while (low <= high){
+    int mid = low + (high - low) / 2;
+
+    comparisons++;
+    if(data[mid].name == name) {
+      return mid;
+    }
+
+    comparisons++;
+    if(data[mid].name < name){
+    low = mid + 1;
+    } else {
+    high = mid - 1;
+    }
+  }
+
   return -1;
 }
