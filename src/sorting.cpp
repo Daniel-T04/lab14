@@ -89,11 +89,23 @@ void selection_sort(ScoreEntry *data, int count, Comparator before,
 void insertion_sort(ScoreEntry *data, int count, Comparator before,
                     long &comparisons) {
   // TODO (Task 5): shift elements; do not swap.
-  (void)data;
-  (void)count;
-  (void)before;
-  (void)comparisons;
-}
+    for (int i = 1; i < count; i++) {
+    ScoreEntry key = data[i];
+    int j = i - 1;
+
+    while (j >= 0){ 
+    comparisons++;
+
+    if (before(key, data[j])){
+     data[j + 1] = data[j];
+     j--;
+    } else{
+      break;
+   }
+ }
+    data[j + 1] = key;
+   }
+ }
 
 int linear_search_name(const ScoreEntry *data, int count,
                        const std::string &name, long &comparisons) {
