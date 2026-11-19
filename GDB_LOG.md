@@ -64,4 +64,11 @@ An unsuccessful search is  searching for "zzz", like the last one it ran for one
 
 The `watch comparisons` stops: the counter and the array position after you skipped the first 50 stops with `ignore`:
 
+The counter value was 1 and the Array position is j = 0 after skipping first 50 stops of the ingore command.
+
+
 One count you read in the debugger, and the number the program reported:
+
+Debugger count is 6 from the final comparison count observed during the run.
+
+Program report count by matching the final Comparisons output printed by the arcade menu was 6 
