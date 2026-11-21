@@ -7,14 +7,14 @@ Run `./build/analysis_main` and copy the counts here. "Ascending" input is the r
 | Input | n | Selection | Insertion | Merge |
 | --- | --- | --- | --- | --- |
 | random | 10 | 45 | 34 | 22 |
-| random | 100 | 4950 | 250 | |
-| random | 1000 | | | |
-| ascending | 10 | | | |
-| ascending | 100 | | | |
-| ascending | 1000 | | | |
-| descending | 10 | | | |
-| descending | 100 | | | |
-| descending | 1000 | | | |
+| random | 100 | 4950 | 250 | 539 |
+| random | 1000 | 499500 | 2508 | 539 |
+| ascending | 10 | 45 | 45 | 19 |
+| ascending | 100 | 4950 | 4950 | 356 |
+| ascending | 1000 | 499500 | 499500 | 5044 |
+| descending | 10 | 45 | 9 | 15 |
+| descending | 100 | 4950 | 99 | 316 |
+| descending | 1000 | 499500 | 999 | 4932 |
 
 ## 2. Predicted comparisons
 
