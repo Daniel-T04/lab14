@@ -6,8 +6,8 @@ Run `./build/analysis_main` and copy the counts here. "Ascending" input is the r
 
 | Input | n | Selection | Insertion | Merge |
 | --- | --- | --- | --- | --- |
-| random | 10 | | | |
-| random | 100 | | | |
+| random | 10 | 45 | 34 | 22 |
+| random | 100 | 4950 | 250 | |
 | random | 1000 | | | |
 | ascending | 10 | | | |
 | ascending | 100 | | | |
