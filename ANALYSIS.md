@@ -22,8 +22,8 @@ Selection: n(n-1)/2. Insertion: best case and worst case. Merge: n log₂ n.
 
 | Input | n | Selection | Insertion | Merge |
 | --- | --- | --- | --- | --- |
-| random | 10 | | | |
-| random | 100 | | | |
+| random | 10 |  45 | ~25 | ~33 |
+| random | 100 | 4950 | | |
 | random | 1000 | | | |
 | ascending | 10 | | | |
 | ascending | 100 | | | |
