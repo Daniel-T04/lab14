@@ -12,7 +12,7 @@ Run `./build/analysis_main` and copy the counts here. "Ascending" input is the r
 | ascending | 10 | 45 | 45 | 19 |
 | ascending | 100 | 4950 | 4950 | 356 |
 | ascending | 1000 | 499500 | 499500 | 5044 |
-| descending | 10 | 45 | 9 | 15 |
+| descending | 10 | 45 | 9 | 15 |, 
 | descending | 100 | 4950 | 99 | 316 |
 | descending | 1000 | 499500 | 999 | 4932 |
 
@@ -33,6 +33,13 @@ Selection: n(n-1)/2. Insertion: best case and worst case. Merge: n log₂ n.
 | descending | 1000 | 499500 | 999 | ~9966 |
 
 Where the prediction and the measurement differ, say why:
+
+For Selection sort. The measured and predicted numbers match completely because selection sort always checks every remaining element regardless of the input order.
+
+In Insertion sort. on descending already sorted input, the count matches the n - 1 formula exactly because the loop stops after one check per element. On ascending which is reverse input, it measures counts like 45,4950, 499500 are half of the n power of 2 predications like 100, 10,000, 1,000,000 because the n power of 2 is just a rough Big-O  upper bound, whereas the exact worst-case forumla is n(n-1)/2.
+
+And Merge Sort: it's measured counts are always  lower than the n log n formula especially in already sorted or reverse inputs because once one half finishes during a merge, the rest of the other half gets copied over without needing ant more comparisons.
+
 
 ## 3. When n grows tenfold
 
