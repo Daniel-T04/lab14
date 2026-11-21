@@ -1,7 +1,5 @@
 #include <gtest/gtest.h>
-
 #include <string>
-
 #include "sorting.h"
 
 namespace {
@@ -46,3 +44,18 @@ TEST(SortingTest, LinearSearchFindsTheFirstMatchAndCounts) {
 }
 
 // ---- yours: add two more here (Task 7) ------------------------------------
+
+TEST(SortingTest, InsertionSortEmptyArray){
+ long comparisons = 0;
+
+ insertion_sort(nullptr, 0, score_descending, comparisons);
+ EXPECT_EQ(comparisons, 0);
+ }
+
+TEST(SortingTest, InsertionSortDuplicateScores) {
+  ScoreEntry data[4] = {entry("Alice", 100), entry("Bob", 75), 
+                        entry("Smith", 75), entry("Sophina", 15)};
+  long comparisons = 0;
+  insertion_sort(data, 4, score_descending, comparisons);
+  EXPECT_TRUE(is_sorted_by_score(data, 4));
+ }
