@@ -71,10 +71,10 @@ void selection_sort(ScoreEntry *data, int count, Comparator before,
   // TODO (Task 2)
   for (int i = 0; i < count - 1; ++i) {
     int mid_index = i;
-    for (int j = i + 1; j < count; ++j){
+    for (int k = i + 1; k < count; ++k){
     comparisons++;
-    if (before(data[j], data[mid_index])) {
-    mid_index = j;
+    if (before(data[k], data[mid_index])) {
+    mid_index = k;
     }
  }
     if (mid_index != i){
