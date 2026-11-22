@@ -70,21 +70,20 @@ void selection_sort(ScoreEntry *data, int count, Comparator before,
                     long &comparisons) {
   // TODO (Task 2)
   for (int i = 0; i < count - 1; ++i) {
-    int mid_index = i;
-    for (int k = i + 1; k < count; ++k){
+  int min_index = i;
+  for (int k = i + 1; k < count; ++k){
     comparisons++;
-    if (before(data[k], data[mid_index])) {
-    mid_index = k;
+    if(before(data[k], data[min_index])){
+     min_index = k;
     }
- }
-    if (mid_index != i){
-    ScoreEntry temp = data[i];
-    data[i] = data[mid_index];
-    data[mid_index] = temp;
-    }
-
   }
-}
+  if (min_index != i ) {
+    ScoreEntry temp = data[i];
+    data[i] = data[min_index];
+    data[min_index] =temp;
+     }
+   }
+ }
 
 void insertion_sort(ScoreEntry *data, int count, Comparator before,
                     long &comparisons) {
